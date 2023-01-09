@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Twitter Sentiment",
+    "description": "Base Level Extension",
+    "version": "1.0",
+    "content_scripts": [
+      {
+          
+          "matches": ["https://twitter.com/*"],
+          "js": ["./scripts/inject.js"],
+          "run_at": "document_end"
+      }
+  ],
+  "permissions": ["activeTab", "*"],
+    "action": {
+      "default_popup": "./popup/main.html",
+      "default_icon": "./images/bird.png"
+    }
+  }
