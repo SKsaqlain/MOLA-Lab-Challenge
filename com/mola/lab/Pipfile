@@ -9,6 +9,7 @@ marshmallow = "*"
 langdetect = "*"
 numpy = "*"
 vadersentiment = "*"
+flask-cors = "*"
 
 [dev-packages]
 
