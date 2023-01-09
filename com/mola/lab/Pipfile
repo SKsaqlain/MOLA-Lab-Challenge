@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 flask = "*"
 marshmallow = "*"
+langdetect = "*"
+numpy = "*"
 
 [dev-packages]
 
