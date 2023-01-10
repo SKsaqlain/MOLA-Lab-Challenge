@@ -34,7 +34,7 @@ function addSentimentEmoji(sentimentScores,tweets){
         }
         console.log(tweets[i][1]+" "+p.innerHTML)
         
-        time.innerHTML=time.innerHTML+" "+p.innerHTML 
+        time.innerHTML=time.innerHTML+" · "+p.innerHTML 
     }
 
 }

@@ -11,7 +11,7 @@
           "run_at": "document_end"
       }
   ],
-  "permissions": ["activeTab", "*"],
+  "permissions": ["activeTab", "https://twitter.com/*"],
     "action": {
       "default_popup": "./popup/main.html",
       "default_icon": "./images/bird.png"
