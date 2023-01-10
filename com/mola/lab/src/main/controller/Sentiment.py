@@ -5,6 +5,7 @@ import json
 from com.mola.lab.src.main.model.Tweet import Tweet, TweetSchema
 from com.mola.lab.src.main.model.Sentiment import SentimentSchema
 
+
 app=Flask(__name__)
 
 sentiment_api = Blueprint('sentiment_api', __name__)

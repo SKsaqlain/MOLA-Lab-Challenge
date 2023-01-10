@@ -41,9 +41,12 @@ def create_response(tweets):
 @langiage_api.route("/api/language-detection", methods=['POST'])
 def language_detection():
     content=request.json
+    print(content)
     requestSchema=TweetSchema(many=True)
     responseSchema=EnglishSchema(many=True)
     tweets=requestSchema.dump(content)
+    print(tweets)
+    print(type(tweets))
     responseList=create_response(tweets)
     return responseSchema.dump(responseList)
 
