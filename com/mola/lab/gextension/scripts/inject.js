@@ -10,10 +10,6 @@ let postObj={
 }
 
 
-
-
-// data-testid="tweetText"
-
 function addSentimentEmoji(sentimentScores,tweets){
     if(sentimentScores.length==0)
         return
@@ -54,7 +50,6 @@ function createGetSentimentRequest(tweets){
 function getSentiment(tweets){
     var requestBody=createGetSentimentRequest(tweets)
     let post = JSON.stringify(requestBody)
-    // console.log(post)
     sentimentApi=URL+"/"+"api/sentiment-score"
     xhr.open('POST', sentimentApi, true)
     xhr.setRequestHeader('Content-type', 'application/json')
@@ -62,9 +57,8 @@ function getSentiment(tweets){
     xhr.send(post);
     xhr.onload = function () {
     if(xhr.status === 200) {
-        console.log("Post successfully created!") 
+        // console.log("Post successfully created!") 
         response=JSON.parse(xhr.response);
-        // console.log(response)
         addSentimentEmoji(response,tweets)
     }
 }
@@ -103,12 +97,7 @@ function isEnglish(tweets){
     xhr.onload = function () {
     if(xhr.status === 200) {
         console.log("Post successfully created!") 
-        // console.log("response message"+xhr.response)
         response=JSON.parse(xhr.response);
-        // console.log(response[0].is_english)
-        // if(response[0].is_english){
-        //     getSentiment(tweetText,nodeContext)
-        // }
         english_tweets=processIsEnglishResponse(response,tweets)
         getSentiment(english_tweets)
     }
@@ -116,8 +105,8 @@ function isEnglish(tweets){
 }
 
 function getTweetText(tweet){
-    // console.log(tweet)
     tweetTextNode=tweet.querySelector('[data-testId=tweetText]')
+    //ignoring non tweet components
     if(tweetTextNode!=null)
         tweetText=tweetTextNode.getElementsByTagName("span")[0]
         return tweetText.innerText
@@ -128,7 +117,6 @@ function processTweets(tweets){
     // will hold[ tweet_context, tweet_Text]
     processed_tweets=[]
     for(i=1;i<tweets.length;i++){
-        // console.log(i)
         tweet_text=getTweetText(tweets[i])
         if(tweet_text!=null)
             processed_tweets.push([tweets[i],tweet_text])
@@ -137,15 +125,9 @@ function processTweets(tweets){
 }
 
 function getTweet(){
-    // var a=document.querySelectorAll('[data-testId=tweetText]');
+    // getting all timelime tweets
     var tweets= document.querySelectorAll('[data-testid=tweet]');
-    // console.log(tweets)
     tweets=processTweets(tweets)
-    // if(tweets.length>=1){
-    // //picking only timeline tweets
-    // for(i=1;i<5;i++){
-    // tweetText=tweets[i].querySelector('[data-testId=tweetText]').getElementsByTagName("span")[0]
-    // var tweetText=tweetText.innerText
      console.log(tweets)
     isEnglish(tweets)
 }
