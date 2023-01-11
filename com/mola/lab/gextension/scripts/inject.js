@@ -1,6 +1,6 @@
 
 let xhr = new XMLHttpRequest()
-const URL=" http://127.0.0.1:5000"
+const URL="  http://35.90.20.98:5000"
 const POSITIVE=0x1F60A
 const NEGATIVE=0x1F641
 const NEUTRAL=0x1F610
@@ -124,8 +124,17 @@ function processTweets(tweets){
     return processed_tweets
 }
 
+
+
 function getTweet(){
     // getting all timelime tweets
+    // var meta=document.createElement("meta")
+    // meta.setAttribute("http-equiv","Content-Security-Policy")
+    // meta.setAttribute("content","upgrade-insecure-requests")
+
+    
+    // document.getElementsByTagName('head')[0].appendChild(meta)
+
     var tweets= document.querySelectorAll('[data-testid=tweet]');
     tweets=processTweets(tweets)
      console.log(tweets)
@@ -135,3 +144,6 @@ function getTweet(){
 
 
 setTimeout(getTweet,5000)
+
+
+{/* <head>  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></head> */}
