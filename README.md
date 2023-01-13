@@ -42,3 +42,5 @@ RUN conda update conda --yes
 RUN pip install pipenv
 WORKDIR /mola/com/mola/lab
 RUN pipenv install
+
+
