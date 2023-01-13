@@ -1,6 +1,6 @@
 
 let xhr = new XMLHttpRequest()
-const URL=" http://127.0.0.1:5000"
+const URL="https://app-sgsb6kwvvq-uw.a.run.app/"
 const POSITIVE=0x1F60A
 const NEGATIVE=0x1F641
 const NEUTRAL=0x1F610
