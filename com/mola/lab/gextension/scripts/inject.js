@@ -133,5 +133,4 @@ function getTweet(){
 }
 
 
-
-setTimeout(getTweet,5000)
+getTweet()
